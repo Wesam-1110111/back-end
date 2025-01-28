@@ -1,0 +1,53 @@
+/* nav bar */
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap");
+* {
+  text-transform: capitalize;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+
+  background-color: var(--bg-color);
+  /* font-size: 25px; */
+  /* transition: all 0.3s ease 0s; */
+  transition: var(--page-transition);
+}
+li,
+a,
+button {
+  font-family: "Tajawal", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--clr-title);
+  text-decoration: none;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px;
+  background-color: #212121;
+  color: mintcream;
+}
+.logo {
+  width: 140px;
+  height: 35px;
+  cursor: pointer;
+  margin-top: -10px;
+  margin-left: 15px;
+  /* box-shadow: rgb(11, 211, 11) 0px 0px 9px 1px; */
+}
+.nav-links {
+  list-style: none;
+}
+.nav-links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+/* .nav-links li a {
+    transition: all 0.3s ease 0s; 
+} */
+.nav-links li a:hover {
+  /* color: #0088a9; */
+  color: mintcream;
+}
