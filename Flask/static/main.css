@@ -11,6 +11,8 @@
   /* font-size: 25px; */
   /* transition: all 0.3s ease 0s; */
   transition: var(--page-transition);
+  text-align: center;
+  /* background-color: #212121 !important; */
 }
 li,
 a,
@@ -18,20 +20,21 @@ button {
   font-family: "Tajawal", sans-serif;
   font-weight: 500;
   font-size: 20px;
-  color: var(--clr-title);
-  text-decoration: none;
+  color: mintcream !important;
+  text-decoration: none !important;
+  
 }
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 10px;
-  background-color: #212121;
+  padding: 15px 10px;
+  background-color: #1F2937 !important;
   color: mintcream;
 }
 .logo {
   width: 140px;
-  height: 35px;
+  height: 55px;
   cursor: pointer;
   margin-top: -10px;
   margin-left: 15px;
@@ -49,5 +52,19 @@ header {
 } */
 .nav-links li a:hover {
   /* color: #0088a9; */
+  color: rgb(28, 136, 186) !important;
+  transition: all ease-in 0.2s;
+}
+
+
+/* footer */
+
+footer{
+  background-color: #1F2937 !important;
   color: mintcream;
+  padding: 20px 0px;
+  font-size: 13px;
+}
+body{
+  background-color: #1E3A8A;
 }

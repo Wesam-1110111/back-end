@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for
-
+import admin
 
 app = Flask(__name__)
 
@@ -8,8 +8,9 @@ app = Flask(__name__)
 
 
 @app.route('/')
+@app.route('/home')
 def home():
-    return render_template('index.html', title='Home')
+    return render_template('index.html', title='Home', projects=admin.projects)
 
 @app.route('/about')
 def about():
@@ -23,6 +24,9 @@ def singin():
 def singup():
     return render_template('singup.html', title='Sing up')
 
+
+
+# main function
 
 if __name__ == "__main__":
     app.run(debug=True)

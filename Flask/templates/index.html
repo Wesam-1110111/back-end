@@ -2,10 +2,20 @@
 
 {% block content %}
 
-<center>
+    <!-- <img src="{{url_for('static', filename='Hand coding (1).gif')}}" alt="hand-coding" style="width: 20%; height: 20%;"> -->
+    <div>
+        <img src="{{url_for('static', filename='Hand coding-pana (1).png')}}" alt="hand-coding" style="width: 25%; height: 25%;">
+    </div>
 
-    <h1>hello from Home Page</h1>
 
-</center>
+    <h1>projects</h1>
+
+    {% for project in projects %}
+
+    <h3>{{project.title}}</h3>
+    <h6>{{project.langs}}</h6>
+    <div class="d">{{project.info}}</div>
+
+    {% endfor %}
 
 {% endblock content %}
