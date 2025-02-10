@@ -1,9 +1,12 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, flash, redirect
 import admin
+from forms import SingUpForm, SingInForm
+
+
 
 app = Flask(__name__)
 
-
+app.config['SECRET_KEY'] = 'a747219fb0e4c41cad24ceca1de9355aeb007141cc6adf2a058fa24f6d3bc47c'
 # print(app)
 
 
@@ -16,14 +19,18 @@ def home():
 def about():
     return render_template('about.html', title='About')
 
-@app.route('/singin')
+@app.route('/singin', methods=['GET', 'POST'])
 def singin():
-    return render_template('singin.html', title='Sing in')
+    form = SingInForm()
+    return render_template('singin.html', title='Sing in', form=form)
 
-@app.route('/singup')
+@app.route('/singup', methods=['GET', 'POST'])
 def singup():
-    return render_template('singup.html', title='Sing up')
-
+    form = SingUpForm()
+    if form.validate_on_submit():
+        flash(f"Account created successfully for {form.username.data}", 'success')
+        return redirect(url_for('home'))
+    return render_template('singup.html', title='Sing up', form=form)
 
 
 # main function
