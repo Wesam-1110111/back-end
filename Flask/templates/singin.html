@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class="container mt-auto aling-items-center">
+<div class="container my-5 border">
     <form action="" method="post">
         {{form.hidden_tag()}}
         <legend class="border-bottom mb-4">Sing In</legend>
@@ -35,13 +35,21 @@
             {%endif%}
         </div>
 
-        <div class="form-group">
+        <div class="form-check">
+            {{form.remember_me(class='form-check-input')}}
+            {{form.remember_me.label(class='form-check-input-label')}}
+        </div>
+
+        <div class="form-group my-3">
             {{form.submit(class='btn btn-outline-primary')}}
             
         </div>
 
     </form>
     <div class="border-top pt-3">
+        <small class="text-muted ml-2">
+            <a href="#">Forgot Password?</a>
+        </small>
         <small class="text-muted">
             Don't have an Account?
             <a href="{{url_for('singup')}}" class="ml-2">Sing Up</a>
